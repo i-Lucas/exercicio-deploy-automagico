@@ -15,4 +15,4 @@ jobs:
           envkey_DATABASE_URL: "DATABASE_URL = postgres://postgres:postgres@db_postgres_git_actions:5432/CDCIGitTestes"
           file_name: ".env.test"
       - name: Run tests
-        run: docker-compose -f docker-compose.tests.yml run node_app_git_actions npm run test
+        run: docker-compose -f docker-compose-tests.yml run node_app_git_actions npm run test
