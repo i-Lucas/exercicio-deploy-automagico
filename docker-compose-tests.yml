@@ -1,0 +1,19 @@
+services:
+  db_postgres_git_actions:
+    image: postgres
+    container_name: db_postgres_git_actions
+    restart: always
+    ports:
+      - 4455:5432
+    env_file:
+      - .env.test
+
+  node_app_git_actions:
+    container_name: node_app_git_actions
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - db_postgres_git_actions
+    env_file:
+      - .env.test
